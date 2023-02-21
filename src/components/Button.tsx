@@ -1,8 +1,6 @@
 import React from 'react';
 
-type ButtonProps = {};
-
-const Button: React.FC<ButtonProps> = () => {
-  return <div>I'm a button</div>;
+const Button: React.FC = () => {
+  return <button type='button'>Continue</button>;
 };
 export default Button;
