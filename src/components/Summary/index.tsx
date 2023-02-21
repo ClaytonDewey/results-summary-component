@@ -1,11 +1,16 @@
 import React from 'react';
 import Button from '../Button';
 import SummaryItem from './SummaryItem';
-import data from '../../data.json';
 
-type SummaryProps = {};
+type SummaryProps = {
+  data: {
+    category: string;
+    score: number;
+    icon: string;
+  }[];
+};
 
-const Summary: React.FC<SummaryProps> = () => {
+const Summary: React.FC<SummaryProps> = ({ data }) => {
   return (
     <div className='summary'>
       <h2>Summary</h2>
