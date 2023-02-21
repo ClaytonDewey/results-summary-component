@@ -1,27 +1,22 @@
-/* 
-- Light red: hsl(0, 100%, 67%)
-- Orangey yellow: hsl(39, 100%, 56%)
-- Green teal: hsl(166, 100%, 37%)
-- Cobalt blue: hsl(234, 85%, 45%)
+// Colors
+$light-red: hsl(0, 100%, 67%);
+$orange-yellow: hsl(39, 100%, 56%);
+$green-teal: hsl(166, 100%, 37%);
+$cobalt-blue: hsl(234, 85%, 45%);
 
-## Gradients
+// Gradients
+$light-slate-blue: hsl(252, 100%, 67%); // (background)
+$light-royal-blue: hsl(241, 81%, 54%); // (background)
 
-- Light slate blue (background): hsl(252, 100%, 67%)
-- Light royal blue (background): hsl(241, 81%, 54%)
+$violet-blue: hsla(256, 72%, 46%, 1); //  (circle)
+$persian-blue: hsla(241, 72%, 46%, 0); //  (circle)
 
-- Violet blue (circle): hsla(256, 72%, 46%, 1)
-- Persian blue (circle): hsla(241, 72%, 46%, 0)
+// Neutral
+$white: hsl(0, 0%, 100%);
+$pale-blue: hsl(221, 100%, 96%);
+$light-lavender: hsl(241, 100%, 89%);
+$dark-gray-blue: hsl(224, 30%, 27%);
 
-
-
-### Neutral
-
-- White: hsl(0, 0%, 100%)
-- Pale blue: hsl(221, 100%, 96%)
-- Light lavender: hsl(241, 100%, 89%)
-- Dark gray blue: hsl(224, 30%, 27%)
-
-*/
 $bp-small: 46em; // 736px;
 $mq-small: "screen and (min-width: #{$bp-small})";
 *,
@@ -36,8 +31,8 @@ html,
 body {
   margin: 0px auto;
   width: 100%;
-  background: #fff;
-  color: #3e3e3e;
+  background: $white;
+  color: $dark-gray-blue;
   box-sizing: border-box;
 }
 
@@ -76,6 +71,7 @@ body {
   & > div {
     margin: 0;
     height: 100%;
+    padding: 4rem;
   }
 
   @media #{$mq-small} {
@@ -91,14 +87,91 @@ body {
 
 // Result Card
 .results {
-  background: rebeccapurple;
-  color: white;
+  background: 7857ff;
+  background-image: linear-gradient(to bottom, $light-slate-blue, $light-royal-blue);
+  color: $white;
   border-radius: 3rem;
+  text-align: center;
+
+  h1 {
+    font-size: 2.4rem;
+    color: $light-lavender;
+    margin-bottom: 4rem;
+  }
+}
+
+.score {
+  &-result {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    height: 20rem;
+    width: 20rem;
+    border-radius: 100%;
+    margin-bottom: 3rem;
+    background: $light-royal-blue;
+    color: $light-lavender;
+  }
+
+  &-value {
+    color: $white;
+    font-size: 7.5rem;
+    font-weight: 800;
+  }
 }
 
 // Summary Card
 .summary {
-  padding: 4rem;
+  h2 {
+    font-size: 2.4rem;
+    margin-bottom: 2.7rem;
+  }
+  &-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+    font-weight: 700;
+
+    img {
+      margin-right: 2rem;
+      vertical-align: middle;
+    }
+
+    .score {
+      color: lighten($dark-gray-blue, 35%);
+
+      span {
+        color: $dark-gray-blue;
+      }
+    }
+
+    &.reaction {
+      background-color: lighten($light-red, 30%);
+      color: $light-red;
+    }
+
+    &.memory {
+      background-color: lighten($orange-yellow, 40%);
+      color: $orange-yellow;
+    }
+
+    &.verbal {
+      background-color: lighten($green-teal, 60%);
+      color: $green-teal;
+    }
+
+    &.visual {
+      background-color: lighten($cobalt-blue, 52%);
+      color: $cobalt-blue;
+    }
+  }
 }
 
 // Footer
