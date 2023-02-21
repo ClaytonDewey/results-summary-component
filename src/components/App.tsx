@@ -3,6 +3,7 @@ import Footer from './Footer';
 import Container from './Container';
 import ResultCard from './ResultCard';
 import Summary from './Summary';
+import data from '../data.json';
 
 type AppProps = {};
 
@@ -10,8 +11,8 @@ const App: React.FC<AppProps> = () => {
   return (
     <>
       <Container>
-        <ResultCard />
-        <Summary />
+        <ResultCard data={data} />
+        <Summary data={data} />
       </Container>
       <Footer />
     </>
